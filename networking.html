@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Networking Concepts - CN Project 1</title>
+  </head>
+  <body>
+    <h1>Networking Concepts</h1>
+
+    <h2>DNS</h2>
+    <p>DNS turns this github domain into an IP address the browser uses to connect to this site. Running the command nslookup for this link it gave an IPv4 address 185.199.109.153 and an IPv6 of 2606:50c0:8003: :153 there were multiple listed as backup addresses for the servers that host the site. When someone usees
+      the URL, DNS "converts" it by resolving it so browsers direct the request to the correct place. 
+    </p> 
+
+    <h2>IP Addressing</h2>
+    <p>Using the previous nslookup command we can see the differences of the IPv4 and IPv6 addresses. IPv4is in 32bit, IPv6 is in 128 bit of hexadecimal addresses. They both point to the GitHub servers so all browsers with DNS can reach the same server on the same IP.</p>
+
+    <h2>HTTP vs HTTPS</h2>
+    <p>\This site is loaded over HTTPS proven by the link starting with https, theres a lock on the left shows that its properly encrypted.
+    The headers using the inspect element developer tools shows that a main request status code 200 saying successful, it also had a tab of response readers that showed it was reading the html and utilizing standard HTTPS protocols over TCP/IP. 
+    The only difference between HTTP and HTTPS is that HTTP is the language of browsers and adding the S is what makes it secure. </p>
+ 
+    <p><a href="index.html">Back to Home</a></p>
+  </body>
+</html>
