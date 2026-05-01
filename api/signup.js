@@ -44,7 +44,6 @@ export default async function handler(req, res) {
       fullname,
       email,
       username,
-      password,
       sec,
       createdAt: new Date()
     });
