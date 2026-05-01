@@ -49,5 +49,47 @@
   <button type="submit">Create Account</button>
 </form>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Following a tutorial for the recaptcha token auth below -->
+    <script>
+
+  const form = document.getElementById('signup-form');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const token = grecaptcha.getResponse();
+
+    if (!token) {
+      alert('Please complete the reCAPTCHA.');
+      return;
+    }
+
+    const data = {
+      fullname: document.getElementById('fullname').value,
+      email: document.getElementById('email').value,
+      username: document.getElementById('username').value,
+      password: document.getElementById('password').value,
+      sec: document.getElementById('sec').value,
+      token: token
+    };
+
+    const response = await fetch('/api/signup', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+      alert('Account created successfully!');
+      form.reset();
+      grecaptcha.reset();
+    } else {
+      alert(result.message || 'Something went wrong.');
+      grecaptcha.reset();
+    }
+  });
+</script>
   </body>
 </html>
