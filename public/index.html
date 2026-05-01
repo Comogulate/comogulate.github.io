@@ -17,7 +17,7 @@
     <h1>Computer Networking Project 1</h1>
     <p>Github Pages: Comp Networks CSC4220 Spring 2026</p>
 
-<p> This is my first time ever working with Github or HTML <p>
+<p> This is my first time ever working with Github or HTML </p>
       <p><a href="networking.html">Networking Concepts</a></p>
 <h2>Create an Account</h2>
 <form id="signup-form">
@@ -56,6 +56,7 @@
 
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
+    alert('submit handler is running');
 
     const token = grecaptcha.getResponse();
 
